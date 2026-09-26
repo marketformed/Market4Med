@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { UserCheck, Stethoscope, Building, HeartHandshake, ArrowRight, CheckCircle2, Sparkles, ExternalLink } from 'lucide-react';
-import { GENERAL_MEMBERSHIP_FORM_URL, BOARD_APPLICATION_FORM_URL } from '../data/links';
+import { UserCheck, Stethoscope, Building, HeartHandshake, ArrowRight, CheckCircle2, Sparkles, ExternalLink, Globe } from 'lucide-react';
+import { GENERAL_MEMBERSHIP_FORM_URL, BOARD_APPLICATION_FORM_URL, GLOBAL_AMBASSADOR_FORM_URL } from '../data/links';
 
 interface GetInvolvedProps {
   siteMode?: 'current' | 'vision';
@@ -15,7 +15,16 @@ export default function GetInvolvedSection({
   onOpenChapter,
   onOpenContact
 }: GetInvolvedProps) {
-  const [selectedRole, setSelectedRole] = useState<string>(siteMode === 'current' ? 'board' : 'student');
+  const [selectedRole, setSelectedRole] = useState<string>('students');
+
+  const scrollToOpportunities = () => {
+    const el = document.getElementById('opportunities');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 900, behavior: 'smooth' });
+    }
+  };
 
   const roleDetailsCurrent: Record<string, {
     title: string;
@@ -26,49 +35,61 @@ export default function GetInvolvedSection({
     isExternal?: boolean;
     action: () => void;
   }> = {
-    board: {
-      title: 'Executive Board Leadership',
-      badge: '2026–2027 Cycle Active',
+    students: {
+      title: 'For Students & Aspiring Pre-Health Leaders',
+      badge: '4 Active Roles · Open Worldwide',
       description:
-        'Apply for executive leadership: Chapter Expansion, Research Working Groups, Outreach & Social Media, Curriculum Development, and Operations.',
+        'Whether you want to lead organizational strategy, represent your region internationally, start a chapter in your community or school, or join our general student community—all applications are active with rolling admissions.',
       benefits: [
-        'Directly shape a student-led organization at the medicine-business nexus',
-        'Lead cross-disciplinary initiatives with aspiring physicians and leaders',
-        'Support students launching chapters at schools and communities',
-        'Hold weekly executive leadership voting seat on organizational strategy'
+        'Executive Board Director positions across operations, outreach, research, and chapters',
+        'Global Student Ambassadors representing schools and cities across 15+ regions',
+        'Founding a local Chapter with zero campus restrictions (open in your city or school)',
+        'General Student Membership open to all high school, college, and post-grad youth'
       ],
-      ctaText: 'Apply for Executive Board (Google Form)',
-      isExternal: true,
-      action: () => window.open(BOARD_APPLICATION_FORM_URL, '_blank', 'noopener,noreferrer')
+      ctaText: 'View All 4 Open Student Roles Above',
+      action: scrollToOpportunities
     },
-    student: {
-      title: 'General Student Membership',
-      badge: 'High School & Beyond (Open to All)',
+    mentors: {
+      title: 'For Physicians, Clinicians & Healthcare Leaders',
+      badge: 'Advisory & Guest Speaking',
       description:
-        'Join the student community of MARKET4MED. Receive updates on healthcare literacy initiatives, workshops, and project collaborations.',
+        'Are you a physician, medical resident, nurse, or healthcare executive passionate about youth health literacy? Connect with our student leadership team as a guest speaker, article reviewer, or clinical advisor.',
       benefits: [
-        'Access to virtual healthcare literacy and patient advocacy workshops',
-        'Connection with a network of peers bridging pre-med and business',
-        'Early invitations to participate in future cohorts and leadership roles',
-        'Direct access to student-led reels, discussions, and community initiatives'
+        'Share real-world clinical delivery insights with high-school and pre-med students',
+        'Advise youth on patient advocacy, healthcare economics, and clinical trust',
+        'Guest speaker opportunities on virtual student webinars and discussions',
+        'Direct mentorship impact on aspiring future healthcare and business leaders'
       ],
-      ctaText: 'General Membership Form (Google Form)',
-      isExternal: true,
-      action: () => window.open(GENERAL_MEMBERSHIP_FORM_URL, '_blank', 'noopener,noreferrer')
+      ctaText: 'Connect as a Clinical Mentor',
+      action: () => onOpenContact('Clinical Mentor / Speaker')
     },
-    chapter: {
-      title: 'Chapter Founders & Directors',
-      badge: 'No School Required · Open Worldwide',
+    educators: {
+      title: 'For Teachers, Counselors & School Advisors',
+      badge: 'Classrooms & Student Clubs',
       description:
-        'Chapters do NOT have to be tied to a school or campus! You can launch a MARKET4MED chapter anywhere—in your local city, neighborhood, community center, youth network, high school, or college. We provide official charter bylaws, global backing, and complete creative freedom.',
+        'High school educators, pre-health advisors, and club directors: bring MARKET4MED to your campus or youth group with our starter guides, educational content, and speaker sessions.',
       benefits: [
-        'Open to anyone worldwide—no campus or school enrollment needed',
-        'Establish an official chapter in your local community, city, or school',
-        'Full creative freedom to design your own local healthcare literacy initiatives',
-        'Represent your community or school on the Global Chapter Council'
+        'Free starter resources and bylaws on healthcare literacy and clinical strategy',
+        'Sponsor or support an official student-led chapter at your school or district',
+        'Co-host virtual educational workshops for your pre-health and STEM students',
+        'Connect your students to an international network of ambitious peers'
       ],
-      ctaText: 'Apply on Official Google Form',
-      action: onOpenChapter
+      ctaText: 'Bring MARKET4MED to Your School',
+      action: () => onOpenContact('Educator / School Inquiry')
+    },
+    partners: {
+      title: 'For Nonprofits, Health Systems & Sponsors',
+      badge: 'Institutional & Community Collaborations',
+      description:
+        'Health equity non-profits, student advocacy groups, and mission-aligned sponsors: partner with MARKET4MED on youth literacy campaigns, regional awareness drives, and community education.',
+      benefits: [
+        'Co-organize community healthcare literacy and patient advocacy initiatives',
+        'Partner on cross-organizational student workshops, panels, and publications',
+        'Support grassroots educational equity and transparency for underserved youth',
+        'Transparent, youth-driven nonprofit mission focused on measurable community impact'
+      ],
+      ctaText: 'Propose a Partnership or Sponsorship',
+      action: () => onOpenContact('Sponsorship / Partnership')
     }
   };
 
@@ -141,9 +162,10 @@ export default function GetInvolvedSection({
   };
 
   const tabsCurrent = [
-    { id: 'board', label: 'Executive Board', icon: Sparkles },
-    { id: 'student', label: 'General Members', icon: UserCheck },
-    { id: 'chapter', label: 'Chapters (Community & School)', icon: Building },
+    { id: 'students', label: 'Students & Youth', icon: UserCheck },
+    { id: 'mentors', label: 'Clinicians & Mentors', icon: Stethoscope },
+    { id: 'educators', label: 'Schools & Educators', icon: Building },
+    { id: 'partners', label: 'Partners & Sponsors', icon: HeartHandshake },
   ];
 
   const tabsVision = [
@@ -165,20 +187,20 @@ export default function GetInvolvedSection({
         <div className="max-w-3xl mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#2C57C4] text-white text-xs font-heading font-black tracking-widest uppercase mb-3 border border-slate-900">
             <UserCheck className="w-3.5 h-3.5 text-[#FF66C4]" />
-            <span>Join MARKET4MED</span>
+            <span>Community & Ecosystem</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-heading font-black text-[#2C57C4] tracking-tight uppercase leading-[1.05]">
-            How You Can Get Involved
+            How You Can Support & Get Involved
           </h2>
           <p className="mt-3 text-base text-slate-700 leading-relaxed font-body font-medium">
             {siteMode === 'current'
-              ? 'We are actively recruiting our founding leadership team, global ambassadors, and chapter founders worldwide (community, regional, or school). Choose your pathway below to submit your application.'
+              ? 'Whether you are a student ready to lead, a physician ready to mentor, an educator bringing healthcare literacy to campus, or an organization eager to collaborate—there is a dedicated place for you.'
               : 'Healthcare transformation requires diverse minds. Choose your pathway below to see tailored opportunities and next steps.'}
           </p>
         </div>
 
         {/* Pathway Tabs */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
           {tabs.map((tab) => {
             const Icon = tab.icon;
             const isSelected = selectedRole === tab.id;
