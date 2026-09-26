@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-m4m-blue: #2C57C4;
+  --color-m4m-pink: #FF66C4;
+  --color-m4m-offwhite: #F4F4F3;
+  --color-m4m-navy: #3252AD;
+  --color-m4m-purple: #A568D4;
+  --color-m4m-black: #0F172A;
+  --font-heading: 'League Spartan', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+    color: #0F172A;
+    background-color: #F8F8F6;
+    letter-spacing: -0.01em;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom Editorial Print Details (Eliminating Generic AI Slop) */
+.m4m-editorial-shadow {
+  box-shadow: 4px 4px 0px 0px #0F172A;
+}
+
+.m4m-editorial-shadow-pink {
+  box-shadow: 4px 4px 0px 0px #FF66C4;
+}
+
+.m4m-editorial-shadow-blue {
+  box-shadow: 4px 4px 0px 0px #2C57C4;
+}
+
+.m4m-editorial-shadow-sm {
+  box-shadow: 2px 2px 0px 0px #0F172A;
+}
+
+.m4m-editorial-card {
+  border: 2px solid #0F172A;
+  box-shadow: 3px 3px 0px 0px #0F172A;
+  background-color: #FFFFFF;
+}
+
+.m4m-editorial-card:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0px 0px #0F172A;
+}
+

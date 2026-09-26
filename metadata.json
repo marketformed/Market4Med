@@ -1,0 +1,8 @@
+{
+  "name": "MARKET4MED",
+  "description": "Where Medicine Meets Business. Bridging clinical medicine, healthcare literacy, and business economics to build the next generation of healthcare leaders.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
