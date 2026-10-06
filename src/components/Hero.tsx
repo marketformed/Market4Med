@@ -1,7 +1,7 @@
 import { ArrowRight, Sparkles, BookOpen, Building2, HeartPulse, Scale, BrainCircuit, Instagram, Calendar, CheckCircle2, ExternalLink, Compass, Globe } from 'lucide-react';
 import { ACCURATE_METRICS, VISION_METRICS } from '../data/mockData';
 import { Market4MedPrimaryLogo, Market4MedSecondaryLogo, BrandStar, BrandBillboardBanner, BrandTicketStub, TikTokIcon } from './BrandLogos';
-import { GENERAL_MEMBERSHIP_FORM_URL, BOARD_APPLICATION_FORM_URL, GLOBAL_AMBASSADOR_FORM_URL, INSTAGRAM_URL, TIKTOK_URL } from '../data/links';
+import { GENERAL_MEMBERSHIP_FORM_URL, GLOBAL_AMBASSADOR_FORM_URL, INSTAGRAM_URL, TIKTOK_URL } from '../data/links';
 
 interface HeroProps {
   siteMode?: 'current' | 'vision';
@@ -48,7 +48,7 @@ export default function Hero({
 
       <div className="absolute bottom-24 left-8 hidden xl:flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-white border-2 border-slate-900 m4m-editorial-shadow-sm rotate-[2deg] pointer-events-none select-none z-10">
         <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-        <span className="text-[11px] font-heading font-black text-slate-800 uppercase tracking-wider">Recruiting Executive Board</span>
+        <span className="text-[11px] font-heading font-black text-slate-800 uppercase tracking-wider">Recruiting Global Ambassadors</span>
       </div>
 
       {/* Subtle Warm Gradient Radiance in Center */}
@@ -132,7 +132,7 @@ export default function Hero({
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border-2 border-slate-900 m4m-editorial-shadow-sm mb-10 text-xs text-slate-800">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
             <span className="font-heading font-black uppercase text-[#2C57C4]">Global Open Call:</span>
-            <span>Executive Board, Global Ambassadors & Worldwide Community Chapter Leads</span>
+            <span>Global Ambassadors, Worldwide Chapters & General Members</span>
           </div>
 
           {/* Primary Action Buttons */}
@@ -150,18 +150,16 @@ export default function Hero({
               <ExternalLink className="w-4 h-4 text-white" />
             </a>
 
-            {/* Primary Board Application Button */}
-            <a
-              id="hero-board-apply-btn"
-              href={BOARD_APPLICATION_FORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* Launch Chapter Button */}
+            <button
+              id="hero-launch-chapter-btn"
+              onClick={onOpenChapterModal}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3.5 rounded-xl bg-[#2C57C4] hover:bg-[#23459c] text-white font-heading font-black text-xs sm:text-sm uppercase tracking-wider border-2 border-slate-900 m4m-editorial-shadow transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] cursor-pointer"
             >
-              <Sparkles className="w-4 h-4 text-[#FF66C4]" />
-              <span>Apply for Executive Board</span>
-              <ExternalLink className="w-4 h-4 text-white" />
-            </a>
+              <Compass className="w-4 h-4 text-[#FF66C4]" />
+              <span>Launch a Chapter</span>
+              <ArrowRight className="w-4 h-4 text-white" />
+            </button>
 
             {/* General Membership Form */}
             <a

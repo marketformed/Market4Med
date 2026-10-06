@@ -294,8 +294,8 @@ export default function ContactSection({ defaultSubject = 'General Inquiry' }: C
                     >
                       <option value="General Inquiry">General Inquiry</option>
                       <option value="Global Ambassador Inquiry">Global Ambassador Program</option>
-                      <option value="Executive Board Leadership">Executive Board Leadership</option>
                       <option value="Chapter Expansion">Launch a Chapter (Community or School)</option>
+                      <option value="General Student Membership">General Student Membership</option>
                       <option value="Student Fellowship">Student Strategy Fellowship</option>
                       <option value="Clinical Mentor / Speaker">Mentorship / Guest Speaking</option>
                       <option value="Sponsorship / Partnership">Institutional Partnership / Sponsorship</option>

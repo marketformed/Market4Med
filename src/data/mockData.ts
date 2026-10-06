@@ -4,7 +4,7 @@ import { BOARD_APPLICATION_FORM_URL, GENERAL_MEMBERSHIP_FORM_URL } from './links
 // Accurate Current Launch Metrics (Real, Honest, Foundational Stage)
 export const ACCURATE_METRICS = [
   { label: 'Founding Leadership Cycle', value: '2026–2027' },
-  { label: 'Executive Board Recruitment', value: 'Open Now' },
+  { label: 'Global Ambassador Call', value: 'Open Worldwide' },
   { label: 'Chapters Worldwide', value: 'Open Call' },
   { label: 'Core Focus', value: 'Medicine × Business' },
 ];
@@ -161,17 +161,17 @@ export const PROGRAMS: Program[] = [
 // ACCURATE CURRENT EVENTS (Realistic, Founding-Phase: No Fake Symposiums)
 export const ACCURATE_EVENTS: EventItem[] = [
   {
-    id: 'event-board-info',
-    title: '2026–2027 Executive Board Information & Q&A Session',
-    speaker: 'MARKET4MED National Founding Team',
-    speakerRole: 'Executive Council & Committee Leads',
+    id: 'event-ambassador-info',
+    title: 'Global Ambassadors & Student Leaders Information Session',
+    speaker: 'MARKET4MED Global Leadership Team',
+    speakerRole: 'International Ambassador & Chapter Leads',
     date: 'October 8, 2026',
     time: '6:00 PM – 7:00 PM EST',
     location: 'Virtual via Zoom (Link sent upon RSVP)',
     isVirtual: true,
     category: 'Roundtable',
     description:
-      'Learn about open Executive Board roles (Chapter Expansion, Research, Curriculum, Marketing, and Operations). Meet the founding team, hear our vision for bridging medicine and business, and get direct answers for your application.',
+      'Learn about Global Ambassador roles, launching community or school chapters worldwide, and our upcoming healthcare literacy roadmap. Meet the leadership team and get direct answers for your application.',
     spotsLeft: 50
   },
   {
@@ -240,29 +240,8 @@ export const VISION_EVENTS: EventItem[] = [
 // Default to accurate events
 export const EVENTS = ACCURATE_EVENTS;
 
-// ACCURATE CURRENT OPPORTUNITIES (No Fake Volunteer Roles; Focus on Board & Chapters)
+// ACCURATE CURRENT OPPORTUNITIES (Active Roles: Ambassador, Chapter & General Member)
 export const ACCURATE_OPPORTUNITIES: Opportunity[] = [
-  {
-    id: 'opp-board-exec',
-    title: 'Executive Board Member (2026–2027 Cycle)',
-    type: 'Executive Team',
-    commitment: '4-7 hours / week',
-    deadline: 'Applications Currently Open',
-    location: 'Remote / Virtual National Leadership',
-    description:
-      'Apply to join the founding Executive Board of MARKET4MED. Directors lead key portfolios: Chapter Expansion, Health Literacy Curriculum, Research Working Groups, Marketing & Social Content, and Event Logistics.',
-    responsibilities: [
-      'Lead and scale initiatives bridging medicine, business, and psychology',
-      'Collaborate on curriculum, guest speaker series, and patient literacy publications',
-      'Support prospective chapter founders in launching community, regional, and school chapters',
-      'Attend weekly Executive Team planning sessions'
-    ],
-    qualifications: [
-      'Motivated high school, pre-med, business, public health, or related student',
-      'Proven initiative, reliability, and clear written/verbal communication',
-      'Commitment to establishing a lasting, high-impact student organization'
-    ]
-  },
   {
     id: 'opp-global-ambassador',
     title: 'Global Student Ambassador',

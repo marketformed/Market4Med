@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Mail, ArrowRight, ShieldCheck, CheckCircle2, Instagram, Palette, ExternalLink, Sparkles, Globe } from 'lucide-react';
 import { Market4MedSecondaryLogo, TikTokIcon } from './BrandLogos';
 import { PageTab } from '../types';
-import { GENERAL_MEMBERSHIP_FORM_URL, BOARD_APPLICATION_FORM_URL, GLOBAL_AMBASSADOR_FORM_URL, OFFICIAL_EMAIL, INSTAGRAM_URL, TIKTOK_URL } from '../data/links';
+import { GENERAL_MEMBERSHIP_FORM_URL, GLOBAL_AMBASSADOR_FORM_URL, OFFICIAL_EMAIL, INSTAGRAM_URL, TIKTOK_URL } from '../data/links';
 
 interface FooterProps {
   siteMode?: 'current' | 'vision';
@@ -43,13 +43,13 @@ export default function Footer({
           <div className="bg-[#3252AD] border-3 border-slate-900 rounded-2xl p-6 sm:p-10 mb-16 flex flex-col lg:flex-row items-center justify-between gap-8 m4m-editorial-shadow-pink">
             <div className="max-w-xl">
               <span className="text-xs uppercase tracking-widest text-[#FF66C4] font-heading font-black block mb-1">
-                Founding Leadership Active
+                Student Recruitment Active
               </span>
               <h3 className="text-2xl sm:text-3xl font-heading font-black text-white uppercase mb-2">
-                Join the 2026–2027 Executive Board
+                Become a Global Ambassador or Chapter Lead
               </h3>
               <p className="text-xs sm:text-sm text-white/90 font-body leading-relaxed font-medium">
-                We are actively recruiting our inaugural leadership team across curriculum, research working groups, chapter expansion, and communications.
+                We are actively welcoming student ambassadors, community chapter directors, and general student members across the globe.
               </p>
             </div>
 
@@ -64,15 +64,13 @@ export default function Footer({
                 <span>Global Ambassador</span>
                 <ExternalLink className="w-3.5 h-3.5 text-white" />
               </a>
-              <a
-                href={BOARD_APPLICATION_FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => handleLinkClick('chapters')}
                 className="px-5 py-3 rounded-xl bg-white hover:bg-slate-100 text-slate-900 font-heading font-black text-xs uppercase tracking-wider border-2 border-slate-900 m4m-editorial-shadow-sm transition-all hover:translate-x-[-1px] hover:translate-y-[-1px] cursor-pointer flex items-center justify-center gap-1.5 whitespace-nowrap"
               >
-                <span>Apply for Board</span>
-                <ExternalLink className="w-3.5 h-3.5 text-slate-900" />
-              </a>
+                <span>Launch a Chapter</span>
+                <ArrowRight className="w-3.5 h-3.5 text-slate-900" />
+              </button>
               <a
                 href={GENERAL_MEMBERSHIP_FORM_URL}
                 target="_blank"
@@ -211,17 +209,6 @@ export default function Footer({
               </li>
               <li>
                 <a
-                  href={BOARD_APPLICATION_FORM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-[#FF66C4] font-heading font-black transition-colors inline-flex items-center gap-1 bg-white/10 px-2 py-0.5 rounded"
-                >
-                  <span>Apply for Executive Board</span>
-                  <ExternalLink className="w-3 h-3 text-[#FF66C4]" />
-                </a>
-              </li>
-              <li>
-                <a
                   href={GENERAL_MEMBERSHIP_FORM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -242,7 +229,7 @@ export default function Footer({
             {siteMode === 'current' ? (
               <div className="space-y-2 text-white/75 text-[11px] leading-relaxed">
                 <p>
-                  Currently in founding launch mode focusing on Executive Board recruitment, global ambassadors, and community & school chapters worldwide.
+                  Currently in active launch mode focusing on Global Ambassadors, Community & School Chapters worldwide, and youth healthcare literacy advocacy.
                 </p>
                 <p className="text-white/60">
                   Future student research cohorts, workshops, and hospital initiatives will launch as chapters expand.

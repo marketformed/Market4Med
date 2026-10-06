@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { X, CheckCircle2, Calendar, MapPin, Download, BookOpen, Send, Compass, ExternalLink, Globe } from 'lucide-react';
 import { Program, EventItem, Opportunity, ResourceItem } from '../types';
-import { GENERAL_MEMBERSHIP_FORM_URL, BOARD_APPLICATION_FORM_URL, GLOBAL_AMBASSADOR_FORM_URL, DEFAULT_CHAPTER_GOOGLE_FORM_URL } from '../data/links';
+import { GENERAL_MEMBERSHIP_FORM_URL, GLOBAL_AMBASSADOR_FORM_URL, DEFAULT_CHAPTER_GOOGLE_FORM_URL } from '../data/links';
 
 interface ModalsProps {
   activeModal: 'rsvp' | 'syllabus' | 'apply' | 'chapter' | 'resource' | null;
@@ -271,12 +271,12 @@ export default function Modals({
                       <ExternalLink className="w-3 h-3 text-white" />
                     </a>
                     <a
-                      href={BOARD_APPLICATION_FORM_URL}
+                      href={DEFAULT_CHAPTER_GOOGLE_FORM_URL}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#2C57C4] hover:bg-[#23459c] text-white font-heading font-black text-[11px] uppercase tracking-wider border border-slate-900 shadow-xs cursor-pointer"
                     >
-                      <span>Board Member Form</span>
+                      <span>Chapter Application</span>
                       <ExternalLink className="w-3 h-3 text-white" />
                     </a>
                     <a

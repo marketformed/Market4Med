@@ -27,7 +27,7 @@ import {
   PILLARS
 } from '../data/mockData';
 import {
-  BOARD_APPLICATION_FORM_URL,
+  GLOBAL_AMBASSADOR_FORM_URL,
   GENERAL_MEMBERSHIP_FORM_URL,
   DEFAULT_CHAPTER_GOOGLE_FORM_URL,
   OFFICIAL_EMAIL,
@@ -78,7 +78,7 @@ export default function BackupDuplicateModal({
       exportDate: new Date().toISOString(),
       activeMode: siteMode,
       links: {
-        boardApplicationUrl: BOARD_APPLICATION_FORM_URL,
+        globalAmbassadorUrl: GLOBAL_AMBASSADOR_FORM_URL,
         generalMembershipUrl: GENERAL_MEMBERSHIP_FORM_URL,
         chapterInterestUrl: DEFAULT_CHAPTER_GOOGLE_FORM_URL,
         email: OFFICIAL_EMAIL,
@@ -202,7 +202,7 @@ export default function BackupDuplicateModal({
                     Current Launch Mode (100% Accurate)
                   </h4>
                   <p className="text-xs text-slate-600 leading-relaxed mb-3">
-                    Reflects the exact stage today: Executive Board recruitment, Chapter chartering, real introductory meetings. Zero fake numbers, zero fake symposiums, and no fake volunteer claims.
+                    Reflects the exact stage today: Global Ambassador & Chapter recruitment, General Membership, real introductory meetings. Zero fake numbers, zero fake symposiums, and no fake volunteer claims.
                   </p>
                 </div>
                 <div className="pt-3 border-t border-slate-200 text-[11px] font-heading font-black text-[#2C57C4] uppercase flex items-center gap-1">
@@ -356,10 +356,10 @@ export default function BackupDuplicateModal({
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
               <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-between">
                 <div>
-                  <span className="font-heading font-black text-[#2C57C4] block text-[11px] uppercase">Executive Board Form:</span>
-                  <span className="text-[11px] text-slate-600 truncate block max-w-[200px]">{BOARD_APPLICATION_FORM_URL}</span>
+                  <span className="font-heading font-black text-[#2C57C4] block text-[11px] uppercase">Global Ambassador Form:</span>
+                  <span className="text-[11px] text-slate-600 truncate block max-w-[200px]">{GLOBAL_AMBASSADOR_FORM_URL}</span>
                 </div>
-                <a href={BOARD_APPLICATION_FORM_URL} target="_blank" rel="noreferrer" className="text-[#2C57C4] hover:text-[#FF66C4]">
+                <a href={GLOBAL_AMBASSADOR_FORM_URL} target="_blank" rel="noreferrer" className="text-[#2C57C4] hover:text-[#FF66C4]">
                   <ExternalLink className="w-4 h-4" />
                 </a>
               </div>

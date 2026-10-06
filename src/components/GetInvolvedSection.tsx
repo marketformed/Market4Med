@@ -37,16 +37,16 @@ export default function GetInvolvedSection({
   }> = {
     students: {
       title: 'For Students & Aspiring Pre-Health Leaders',
-      badge: '4 Active Roles · Open Worldwide',
+      badge: '3 Active Roles · Open Worldwide',
       description:
-        'Whether you want to lead organizational strategy, represent your region internationally, start a chapter in your community or school, or join our general student community—all applications are active with rolling admissions.',
+        'Whether you want to represent your region internationally as a Global Ambassador, launch a chapter in your community or school, or join our student network—open applications are welcoming students worldwide.',
       benefits: [
-        'Executive Board Director positions across operations, outreach, research, and chapters',
         'Global Student Ambassadors representing schools and cities across 15+ regions',
         'Founding a local Chapter with zero campus restrictions (open in your city or school)',
-        'General Student Membership open to all high school, college, and post-grad youth'
+        'General Student Membership open to all high school, college, and post-grad youth',
+        'Direct pathways to future committee and project leadership cohorts'
       ],
-      ctaText: 'View All 4 Open Student Roles Above',
+      ctaText: 'View Open Student Roles Above',
       action: scrollToOpportunities
     },
     mentors: {

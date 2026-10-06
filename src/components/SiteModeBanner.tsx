@@ -40,7 +40,7 @@ export default function SiteModeBanner({
 
           <span className="text-slate-300 text-[11px] hidden md:inline font-body">
             {siteMode === 'current'
-              ? 'Public View: Executive Board recruitment, General Membership, and Chapters (Community & School).'
+              ? 'Public View: Global Ambassadors, General Membership, and Chapters (Community & School).'
               : 'Expansion Draft: Programs, Events, and Partners.'}
           </span>
         </div>

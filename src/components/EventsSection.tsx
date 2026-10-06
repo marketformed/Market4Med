@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Calendar, Clock, MapPin, Video, UserCheck, Sparkles, ExternalLink, ArrowRight } from 'lucide-react';
 import { ACCURATE_EVENTS, VISION_EVENTS } from '../data/mockData';
 import { EventItem } from '../types';
-import { BOARD_APPLICATION_FORM_URL } from '../data/links';
+import { GLOBAL_AMBASSADOR_FORM_URL } from '../data/links';
 
 interface EventsSectionProps {
   siteMode?: 'current' | 'vision';
@@ -73,17 +73,17 @@ export default function EventsSection({ siteMode = 'current', onRSVP }: EventsSe
               Looking for our Annual Student Healthcare Symposium?
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 font-medium">
-              Large-scale regional symposia and in-person summits will be planned by our incoming 2026–2027 Executive Board. Apply today to help organize and direct our inaugural conferences!
+              Large-scale regional symposia and in-person summits are being coordinated by our international leadership. Apply as a Global Ambassador or Chapter Lead to organize in your region!
             </p>
           </div>
 
           <a
-            href={BOARD_APPLICATION_FORM_URL}
+            href={GLOBAL_AMBASSADOR_FORM_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#2C57C4] hover:bg-[#23459c] text-white font-heading font-black text-xs uppercase tracking-wider border-2 border-slate-900 m4m-editorial-shadow-sm transition-all hover:translate-x-[-1px] hover:translate-y-[-1px] cursor-pointer shrink-0"
           >
-            <span>Apply to Help Plan Events</span>
+            <span>Get Involved as an Ambassador</span>
             <ExternalLink className="w-3.5 h-3.5 text-white" />
           </a>
         </div>

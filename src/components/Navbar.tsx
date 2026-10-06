@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Menu, X, ArrowUpRight, Compass, ShieldCheck, Palette, ExternalLink, Sparkles, Globe } from 'lucide-react';
 import { Market4MedNavbarLogo } from './BrandLogos';
 import { PageTab } from '../types';
-import { GENERAL_MEMBERSHIP_FORM_URL, BOARD_APPLICATION_FORM_URL, GLOBAL_AMBASSADOR_FORM_URL } from '../data/links';
+import { GENERAL_MEMBERSHIP_FORM_URL, GLOBAL_AMBASSADOR_FORM_URL } from '../data/links';
 
 interface NavbarProps {
   siteMode?: 'current' | 'vision';
@@ -106,16 +106,16 @@ export default function Navbar({
             <span>Launch Chapter</span>
           </button>
 
-          {/* Executive Board Application */}
+          {/* Global Ambassador Application */}
           <a
-            id="nav-board-app-btn"
-            href={BOARD_APPLICATION_FORM_URL}
+            id="nav-ambassador-app-btn"
+            href={GLOBAL_AMBASSADOR_FORM_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-heading font-black text-white bg-[#2C57C4] hover:bg-[#23459c] rounded-lg border-2 border-slate-900 transition-colors cursor-pointer uppercase tracking-wider shadow-xs"
           >
-            <Sparkles className="w-3 h-3 text-[#FF66C4]" />
-            <span>Board App</span>
+            <Globe className="w-3 h-3 text-[#FF66C4]" />
+            <span>Ambassador</span>
             <ExternalLink className="w-3 h-3 text-white" />
           </a>
 
@@ -196,17 +196,6 @@ export default function Navbar({
               >
                 <Globe className="w-4 h-4 text-white" />
                 <span>Apply as Global Ambassador</span>
-                <ExternalLink className="w-4 h-4 text-white" />
-              </a>
-              <a
-                id="mobile-board-btn"
-                href={BOARD_APPLICATION_FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full flex items-center justify-center gap-2 py-2.5 px-4 text-sm font-heading font-black text-white bg-[#2C57C4] rounded-xl hover:bg-[#23459c] cursor-pointer uppercase tracking-wider border-2 border-slate-900"
-              >
-                <span>Apply for Executive Board</span>
                 <ExternalLink className="w-4 h-4 text-white" />
               </a>
               <a

@@ -1,5 +1,5 @@
 import React from 'react';
-import { GENERAL_MEMBERSHIP_FORM_URL, BOARD_APPLICATION_FORM_URL } from '../data/links';
+import { GENERAL_MEMBERSHIP_FORM_URL, GLOBAL_AMBASSADOR_FORM_URL } from '../data/links';
 
 interface PrimaryLogoProps {
   className?: string;
@@ -362,32 +362,32 @@ export function BrandBillboardBanner({
       <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div className="max-w-2xl">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#FF66C4] text-white text-xs font-heading font-black tracking-widest uppercase mb-3 border border-slate-900 shadow-xs">
-            <span>★ LEADERSHIP RECRUITMENT ACTIVE ★</span>
+            <span>★ WORLDWIDE RECRUITMENT ACTIVE ★</span>
           </div>
 
           <h2 className="text-2xl sm:text-4xl font-heading font-black uppercase tracking-tight leading-tight text-white drop-shadow-sm">
-            2026–2027 BOARD APPLICATIONS <br />
+            GLOBAL AMBASSADOR & CHAPTER APPLICATIONS <br />
             <span className="text-[#FF66C4] bg-slate-900 px-2 py-0.5 rounded inline-block mt-1">ARE OFFICIALLY OPEN</span>
           </h2>
 
           <p className="text-white/95 text-sm sm:text-base font-body font-medium mt-3 leading-relaxed">
-            Join the executive team shaping healthcare literacy, workshop series, and clinical-business research worldwide.
+            Represent MARKET4MED internationally as a Global Ambassador or launch an official chapter in your community or school.
           </p>
         </div>
 
         <div className="flex flex-col sm:flex-row items-start md:items-center gap-3 shrink-0">
           <div className="bg-white px-4 py-2.5 rounded-lg border-2 border-slate-900 text-center text-slate-900">
-            <span className="text-[10px] uppercase font-heading font-black text-slate-600 block">APPLICATION DEADLINE</span>
-            <span className="text-sm font-heading font-black text-[#2C57C4]">2026–2027 CYCLE</span>
+            <span className="text-[10px] uppercase font-heading font-black text-slate-600 block">APPLICATION STATUS</span>
+            <span className="text-sm font-heading font-black text-[#2C57C4]">ROLLING ADMISSIONS</span>
           </div>
 
           <a
-            href={BOARD_APPLICATION_FORM_URL}
+            href={GLOBAL_AMBASSADOR_FORM_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#FF66C4] hover:bg-[#ff4db9] text-white font-heading font-black text-sm uppercase tracking-wider border-2 border-slate-900 m4m-editorial-shadow-sm hover:translate-x-[-1px] hover:translate-y-[-1px] transition-all cursor-pointer"
           >
-            <span>APPLY FOR BOARD</span>
+            <span>APPLY AS AMBASSADOR</span>
             <span className="text-xl leading-none">→</span>
           </a>
         </div>
