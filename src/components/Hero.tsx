@@ -36,12 +36,12 @@ export default function Hero({
       />
 
       {/* Floating Graphic Accents */}
-      <div className="absolute top-16 left-6 hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-md bg-white border-2 border-slate-900 m4m-editorial-shadow-sm rotate-[-3deg] pointer-events-none select-none z-10">
+      <div className="absolute top-56 left-4 xl:left-12 hidden lg:flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-white border-2 border-slate-900 m4m-editorial-shadow-sm rotate-[-4deg] pointer-events-none select-none z-10">
         <BrandStar color="#2C57C4" size={14} />
         <span className="text-[11px] font-heading font-black text-[#2C57C4] uppercase tracking-wider">Medicine × Business</span>
       </div>
 
-      <div className="absolute top-20 right-8 hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#FF66C4] text-white border-2 border-slate-900 m4m-editorial-shadow-sm rotate-[4deg] pointer-events-none select-none z-10">
+      <div className="absolute top-56 right-4 xl:right-12 hidden lg:flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-[#FF66C4] text-white border-2 border-slate-900 m4m-editorial-shadow-sm rotate-[4deg] pointer-events-none select-none z-10">
         <Sparkles className="w-3.5 h-3.5 text-white" />
         <span className="text-[11px] font-heading font-black uppercase tracking-wider">2026–2027 Cycle</span>
       </div>
