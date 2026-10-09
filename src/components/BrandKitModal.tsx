@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { X, Check, Copy, Download, Sparkles, ExternalLink, Palette, Type, Shield } from 'lucide-react';
-import { Market4MedPrimaryLogo, Market4MedSecondaryLogo, BrandStar, TikTokIcon } from './BrandLogos';
-import { INSTAGRAM_URL, TIKTOK_URL } from '../data/links';
+import { Market4MedPrimaryLogo, Market4MedSecondaryLogo, BrandStar, TikTokIcon, SubstackIcon } from './BrandLogos';
+import { INSTAGRAM_URL, TIKTOK_URL, SUBSTACK_URL } from '../data/links';
 
 interface BrandKitModalProps {
   isOpen: boolean;
@@ -238,12 +238,22 @@ export default function BrandKitModal({ isOpen, onClose }: BrandKitModalProps) {
               </p>
             </div>
 
-            <div className="flex items-center gap-2 shrink-0">
+            <div className="flex flex-wrap items-center gap-2 shrink-0">
+              <a
+                href={SUBSTACK_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-900 font-heading font-black text-xs uppercase tracking-wider shadow-md transition-all shrink-0"
+              >
+                <SubstackIcon size={12} className="text-[#FF66C4]" />
+                <span>Substack</span>
+                <ExternalLink className="w-3 h-3 text-slate-900" />
+              </a>
               <a
                 href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#FF66C4] hover:bg-[#ff4db9] text-white font-heading font-black text-xs uppercase tracking-wider shadow-md transition-all shrink-0"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#FF66C4] hover:bg-[#ff4db9] text-white font-heading font-black text-xs uppercase tracking-wider shadow-md transition-all shrink-0"
               >
                 <span>Instagram</span>
                 <ExternalLink className="w-3 h-3" />
@@ -252,7 +262,7 @@ export default function BrandKitModal({ isOpen, onClose }: BrandKitModalProps) {
                 href={TIKTOK_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white/20 hover:bg-white/30 text-white font-heading font-black text-xs uppercase tracking-wider shadow-md transition-all shrink-0"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white/20 hover:bg-white/30 text-white font-heading font-black text-xs uppercase tracking-wider shadow-md transition-all shrink-0"
               >
                 <TikTokIcon size={13} className="text-white" />
                 <span>TikTok</span>

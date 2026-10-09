@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import { BookOpen, Search, Download, ArrowUpRight, Tag, Eye } from 'lucide-react';
+import { BookOpen, Search, Download, ArrowUpRight, Tag, Eye, ExternalLink } from 'lucide-react';
 import { RESOURCES } from '../data/mockData';
 import { ResourceItem } from '../types';
+import { SUBSTACK_URL } from '../data/links';
+import { SubstackIcon } from './BrandLogos';
 
 interface ResourcesSectionProps {
   onReadResource: (resource: ResourceItem) => void;
@@ -82,6 +84,39 @@ export default function ResourcesSection({ onReadResource }: ResourcesSectionPro
               {topic}
             </button>
           ))}
+        </div>
+
+        {/* Featured Substack Publication Banner */}
+        <div className="mb-12 p-7 sm:p-10 rounded-2xl bg-[#2C57C4] text-white border-3 border-slate-900 m4m-editorial-shadow-pink flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-[#FF66C4]/20 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
+          <div className="relative z-10 max-w-2xl space-y-3">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-[#FF66C4] text-white text-xs font-heading font-black tracking-widest uppercase border border-slate-900 shadow-xs">
+              <SubstackIcon size={14} className="text-white" />
+              <span>Official Substack Publication · Free Access</span>
+            </div>
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-white uppercase tracking-tight leading-[1.05]">
+              Read MARKET4MED On Substack
+            </h3>
+            <p className="text-sm sm:text-base text-white/95 font-body leading-relaxed font-medium">
+              Subscribe to regular student-written articles exploring healthcare economics, patient psychology, clinical trust, and plain-language health literacy breakdowns.
+            </p>
+            <div className="flex flex-wrap items-center gap-3 pt-1 text-xs font-heading font-bold uppercase text-white/90">
+              <span className="bg-white/10 px-2.5 py-1 rounded border border-white/20">Biweekly Articles</span>
+              <span className="bg-white/10 px-2.5 py-1 rounded border border-white/20">Student Authored</span>
+              <span className="bg-white/10 px-2.5 py-1 rounded border border-white/20">Open Worldwide</span>
+            </div>
+          </div>
+
+          <a
+            href={SUBSTACK_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative z-10 px-7 py-4 rounded-xl bg-white hover:bg-slate-100 text-slate-900 font-heading font-black text-sm uppercase tracking-wider border-2 border-slate-900 m4m-editorial-shadow transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] cursor-pointer inline-flex items-center gap-2.5 shrink-0 whitespace-nowrap"
+          >
+            <SubstackIcon size={18} className="text-[#FF66C4]" />
+            <span>Read & Subscribe (@market4med)</span>
+            <ExternalLink className="w-4 h-4 text-[#2C57C4]" />
+          </a>
         </div>
 
         {/* Download Notification Toast */}

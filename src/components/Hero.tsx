@@ -1,7 +1,7 @@
 import { ArrowRight, Sparkles, BookOpen, Building2, HeartPulse, Scale, BrainCircuit, Instagram, Calendar, CheckCircle2, ExternalLink, Compass, Globe } from 'lucide-react';
 import { ACCURATE_METRICS, VISION_METRICS } from '../data/mockData';
-import { Market4MedPrimaryLogo, Market4MedSecondaryLogo, BrandStar, BrandBillboardBanner, BrandTicketStub, TikTokIcon } from './BrandLogos';
-import { GENERAL_MEMBERSHIP_FORM_URL, GLOBAL_AMBASSADOR_FORM_URL, INSTAGRAM_URL, TIKTOK_URL } from '../data/links';
+import { Market4MedPrimaryLogo, Market4MedSecondaryLogo, BrandStar, BrandBillboardBanner, TikTokIcon, SubstackIcon } from './BrandLogos';
+import { GENERAL_MEMBERSHIP_FORM_URL, GLOBAL_AMBASSADOR_FORM_URL, INSTAGRAM_URL, TIKTOK_URL, SUBSTACK_URL } from '../data/links';
 
 interface HeroProps {
   siteMode?: 'current' | 'vision';
@@ -66,15 +66,27 @@ export default function Hero({
             </span>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2.5">
+            <a
+              href={SUBSTACK_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#FF66C4] text-white hover:bg-[#ff4db9] text-xs sm:text-sm font-heading font-black tracking-wider uppercase border-2 border-slate-900 m4m-editorial-shadow-sm transition-all hover:translate-x-[-1px] hover:translate-y-[-1px] cursor-pointer"
+              title="Official Substack @market4med"
+            >
+              <SubstackIcon size={15} className="text-white" />
+              <span>Substack</span>
+              <ExternalLink className="w-3.5 h-3.5 text-white" />
+            </a>
+
             <a
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-white border-2 border-slate-900 text-slate-900 hover:bg-[#FF66C4] hover:text-white text-xs font-heading font-black transition-colors m4m-editorial-shadow-sm cursor-pointer"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white border-2 border-slate-900 text-slate-900 hover:bg-[#2C57C4] hover:text-white text-xs sm:text-sm font-heading font-black transition-colors m4m-editorial-shadow-sm cursor-pointer"
               title="Official Instagram @market4med"
             >
-              <Instagram className="w-3.5 h-3.5 text-[#FF66C4]" />
+              <Instagram className="w-4 h-4 text-[#FF66C4]" />
               <span>Instagram</span>
             </a>
 
@@ -82,10 +94,10 @@ export default function Hero({
               href={TIKTOK_URL}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-white border-2 border-slate-900 text-slate-900 hover:bg-[#2C57C4] hover:text-white text-xs font-heading font-black transition-colors m4m-editorial-shadow-sm cursor-pointer"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white border-2 border-slate-900 text-slate-900 hover:bg-[#2C57C4] hover:text-white text-xs sm:text-sm font-heading font-black transition-colors m4m-editorial-shadow-sm cursor-pointer"
               title="Official TikTok @market4med"
             >
-              <TikTokIcon size={13} className="text-[#2C57C4]" />
+              <TikTokIcon size={14} className="text-[#2C57C4]" />
               <span>TikTok</span>
             </a>
           </div>
@@ -161,6 +173,19 @@ export default function Hero({
               <ArrowRight className="w-4 h-4 text-white" />
             </button>
 
+            {/* Read Substack Publication Button */}
+            <a
+              id="hero-read-substack-btn"
+              href={SUBSTACK_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3.5 rounded-xl bg-white hover:bg-[#FFF0F8] text-[#2C57C4] hover:text-[#1e3b8a] font-heading font-black text-xs sm:text-sm uppercase tracking-wider border-2 border-slate-900 m4m-editorial-shadow transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] cursor-pointer"
+            >
+              <SubstackIcon size={16} className="text-[#FF66C4]" />
+              <span>Read Our Substack</span>
+              <ExternalLink className="w-4 h-4 text-[#2C57C4]" />
+            </a>
+
             {/* General Membership Form */}
             <a
               id="hero-general-membership-btn"
@@ -193,26 +218,69 @@ export default function Hero({
                 <span>Programs & Topics</span>
               </button>
             )}
+          </div>
+        </div>
 
-            <button
-              id="hero-launch-chapter-btn"
-              onClick={onOpenChapterModal}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-[#F8F8F6] hover:bg-slate-200 text-slate-900 font-heading font-black text-xs sm:text-sm uppercase tracking-wider border-2 border-slate-900 m4m-editorial-shadow-sm transition-all hover:translate-x-[-1px] hover:translate-y-[-1px] cursor-pointer"
-            >
-              <Building2 className="w-4 h-4 text-[#2C57C4]" />
-              <span>Launch Chapter</span>
-            </button>
+        {/* Featured Substack Publication Showcase Card */}
+        <div className="max-w-5xl mx-auto mb-12 bg-white rounded-2xl border-3 border-slate-900 m4m-editorial-shadow p-6 sm:p-8 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-[#FF66C4]/10 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
+          
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative z-10">
+            <div className="space-y-3 max-w-2xl">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#2C57C4] text-white text-xs font-heading font-black uppercase tracking-wider border border-slate-900 shadow-xs">
+                  <SubstackIcon size={13} className="text-[#FF66C4]" />
+                  <span>Official Publication</span>
+                </span>
+                <span className="text-xs font-heading font-bold text-slate-600 uppercase tracking-wider">
+                  @market4med · Weekly Editorial
+                </span>
+              </div>
+
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#2C57C4] uppercase tracking-tight leading-tight">
+                MARKET4MED On Substack
+              </h2>
+
+              <p className="text-sm sm:text-base text-slate-700 font-body font-medium leading-relaxed">
+                Our student-led editorial exploring <strong className="text-slate-950 font-bold">healthcare economics</strong>, <strong className="text-slate-950 font-bold">patient psychology</strong>, and <strong className="text-slate-950 font-bold">clinical trust</strong>. Free issues published regularly for pre-meds, economics students, and healthcare advocates.
+              </p>
+
+              <div className="flex flex-wrap items-center gap-4 text-xs font-heading font-black uppercase text-slate-800 pt-1">
+                <span className="inline-flex items-center gap-1.5 text-[#2C57C4]">
+                  <CheckCircle2 className="w-4 h-4 text-[#FF66C4]" /> Plain-Language Patient Literacy
+                </span>
+                <span className="inline-flex items-center gap-1.5 text-[#2C57C4]">
+                  <CheckCircle2 className="w-4 h-4 text-[#FF66C4]" /> Hospital & Biotech Economics
+                </span>
+                <span className="inline-flex items-center gap-1.5 text-[#2C57C4]">
+                  <CheckCircle2 className="w-4 h-4 text-[#FF66C4]" /> Bedside Trust Psychology
+                </span>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0 lg:min-w-[240px]">
+              <a
+                id="hero-read-substack-banner-btn"
+                href={SUBSTACK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-[#FF66C4] hover:bg-[#ff4db9] text-white font-heading font-black text-sm uppercase tracking-wider border-2 border-slate-900 m4m-editorial-shadow transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] cursor-pointer text-center"
+              >
+                <SubstackIcon size={16} className="text-white" />
+                <span>Read & Subscribe</span>
+                <ExternalLink className="w-4 h-4 text-white" />
+              </a>
+
+              <div className="text-center text-[11px] font-heading font-bold uppercase tracking-wider text-slate-500">
+                substack.com/@market4med
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Billboard Announcement Banner */}
-        <div className="max-w-5xl mx-auto mb-12">
+        <div className="max-w-5xl mx-auto mb-16">
           <BrandBillboardBanner onApply={onOpenApplyModal} />
-        </div>
-
-        {/* Film Ticket Event Announcement Stub */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <BrandTicketStub onApply={onOpenApplyModal} />
         </div>
 
         {/* Visual Thematic Triad: Medicine - Business - Psychology & Trust */}

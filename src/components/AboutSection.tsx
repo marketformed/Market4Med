@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Target, CheckCircle2, Award, Zap, Globe2, BookOpen, Instagram, Play, ArrowRight, ExternalLink, Users, HeartHandshake, Sparkles } from 'lucide-react';
-import { BrandStar, TikTokIcon } from './BrandLogos';
-import { INSTAGRAM_URL, TIKTOK_URL, OFFICIAL_REELS, GENERAL_MEMBERSHIP_FORM_URL } from '../data/links';
+import { BrandStar, TikTokIcon, SubstackIcon } from './BrandLogos';
+import { INSTAGRAM_URL, TIKTOK_URL, SUBSTACK_URL, OFFICIAL_REELS, GENERAL_MEMBERSHIP_FORM_URL } from '../data/links';
 
 export default function AboutSection() {
   const [activeTab, setActiveTab] = useState<'bridging' | 'whatWeDo' | 'community' | 'why' | 'social'>('bridging');
@@ -380,11 +380,22 @@ export default function AboutSection() {
                       </span>
                     </div>
                     <p className="text-xs sm:text-sm text-slate-600 mt-1 font-body">
-                      Watch our student-created reels and short videos on Instagram & TikTok exploring medicine, healthcare business, and why patients trust doctors.
+                      Read our student publications on Substack, and watch our reels on Instagram & TikTok exploring medicine, healthcare business, and patient advocacy.
                     </p>
                   </div>
 
-                  <div className="flex items-center gap-2.5 shrink-0">
+                  <div className="flex flex-wrap items-center gap-2.5 shrink-0">
+                    <a
+                      href={SUBSTACK_URL}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white hover:bg-slate-100 text-slate-900 font-heading font-black text-xs uppercase tracking-wider border-2 border-slate-900 m4m-editorial-shadow-sm transition-all"
+                    >
+                      <SubstackIcon size={14} className="text-[#FF66C4]" />
+                      <span>Substack</span>
+                      <ExternalLink className="w-3 h-3 text-slate-900" />
+                    </a>
+
                     <a
                       href={INSTAGRAM_URL}
                       target="_blank"

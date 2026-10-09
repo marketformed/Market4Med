@@ -15,6 +15,7 @@ import ResourcesSection from './components/ResourcesSection';
 import ChaptersSection from './components/ChaptersSection';
 import PartnersSection from './components/PartnersSection';
 import GetInvolvedSection from './components/GetInvolvedSection';
+import HomeOverview from './components/HomeOverview';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import Modals from './components/Modals';
@@ -229,19 +230,10 @@ export default function App() {
               onOpenChapterModal={handleOpenChapterModal}
               onOpenApplyModal={() => handleOpenApply()}
             />
-            {/* Highlights from About and Pillars on Home */}
-            <MissionPillars />
-            {/* Opportunities Section featured prominently right on Home */}
-            <OpportunitiesSection
-              siteMode={siteMode}
-              onApply={(opp) => handleOpenApply(opp)}
-            />
-            {/* Quick Action Pathways */}
-            <GetInvolvedSection
-              siteMode={siteMode}
-              onOpenApply={() => handleOpenApply()}
-              onOpenChapter={handleOpenChapterModal}
-              onOpenContact={handleRoleContact}
+            {/* Curated, engaging discovery hub guiding visitors across the site without duplicating full pages */}
+            <HomeOverview
+              onNavigateTab={handleSelectTab}
+              onOpenChapterModal={handleOpenChapterModal}
             />
           </div>
         )}
@@ -254,18 +246,12 @@ export default function App() {
           </div>
         )}
 
-        {/* Tab 5: OPPORTUNITIES & GET INVOLVED (Active in all modes) */}
+        {/* Tab 5: OPPORTUNITIES & LEADERSHIP PATHWAYS */}
         {currentTab === 'opportunities' && (
           <div>
             <OpportunitiesSection
               siteMode={siteMode}
               onApply={(opp) => handleOpenApply(opp)}
-            />
-            <GetInvolvedSection
-              siteMode={siteMode}
-              onOpenApply={() => handleOpenApply()}
-              onOpenChapter={handleOpenChapterModal}
-              onOpenContact={handleRoleContact}
             />
           </div>
         )}
@@ -315,6 +301,7 @@ export default function App() {
       {/* Footer with page tab switcher and duplication access */}
       <Footer
         siteMode={siteMode}
+        activeTab={currentTab}
         onSelectTab={handleSelectTab}
         onOpenBrandKitModal={() => setBrandKitOpen(true)}
         onOpenDuplicateModal={() => setDuplicateModalOpen(true)}

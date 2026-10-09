@@ -18,6 +18,7 @@ export const CHAPTER_APPLICATION_FORM_URL = 'https://forms.gle/k7ASmMd8duZodTCaA
 export const OFFICIAL_EMAIL = 'marketformed@gmail.com';
 export const INSTAGRAM_URL = 'https://www.instagram.com/market4med/';
 export const TIKTOK_URL = 'https://www.tiktok.com/@market4med';
+export const SUBSTACK_URL = 'https://substack.com/@market4med';
 
 export const OFFICIAL_REELS = [
   {

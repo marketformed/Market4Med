@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Mail, MessageSquare, Send, CheckCircle2, Building, Sparkles, Instagram, ExternalLink, Copy, Check, ArrowRight } from 'lucide-react';
-import { TikTokIcon } from './BrandLogos';
-import { INSTAGRAM_URL, TIKTOK_URL, OFFICIAL_EMAIL } from '../data/links';
+import { TikTokIcon, SubstackIcon } from './BrandLogos';
+import { INSTAGRAM_URL, TIKTOK_URL, SUBSTACK_URL, OFFICIAL_EMAIL } from '../data/links';
 
 interface ContactSectionProps {
   defaultSubject?: string;
@@ -166,11 +166,20 @@ export default function ContactSection({ defaultSubject = 'General Inquiry' }: C
                 </div>
                 <div>
                   <div className="text-xs font-heading font-black uppercase text-slate-900">Follow @market4med</div>
-                  <div className="text-[11px] text-slate-600 font-body">Instagram & TikTok Content</div>
+                  <div className="text-[11px] text-slate-600 font-body">Substack, Instagram & TikTok</div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-2 w-full sm:w-auto">
+              <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
+                <a
+                  href={SUBSTACK_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-slate-900 hover:bg-slate-100 text-slate-900 text-xs font-heading font-black transition-colors"
+                >
+                  <SubstackIcon size={12} className="text-[#FF66C4]" />
+                  <span>Substack</span>
+                </a>
                 <a
                   href={INSTAGRAM_URL}
                   target="_blank"

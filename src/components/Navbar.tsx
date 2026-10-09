@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Menu, X, ArrowUpRight, Compass, ShieldCheck, Palette, ExternalLink, Sparkles, Globe } from 'lucide-react';
-import { Market4MedNavbarLogo } from './BrandLogos';
+import { Market4MedNavbarLogo, SubstackIcon } from './BrandLogos';
 import { PageTab } from '../types';
-import { GENERAL_MEMBERSHIP_FORM_URL, GLOBAL_AMBASSADOR_FORM_URL } from '../data/links';
+import { GENERAL_MEMBERSHIP_FORM_URL, GLOBAL_AMBASSADOR_FORM_URL, SUBSTACK_URL } from '../data/links';
 
 interface NavbarProps {
   siteMode?: 'current' | 'vision';
@@ -106,6 +106,19 @@ export default function Navbar({
             <span>Launch Chapter</span>
           </button>
 
+          {/* Substack Publication */}
+          <a
+            id="nav-substack-btn"
+            href={SUBSTACK_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-heading font-bold text-slate-900 bg-white hover:bg-slate-100 rounded-lg border-2 border-slate-900 transition-colors cursor-pointer"
+            title="Read MARKET4MED on Substack"
+          >
+            <SubstackIcon size={14} className="text-[#FF66C4]" />
+            <span>Substack</span>
+          </a>
+
           {/* Global Ambassador Application */}
           <a
             id="nav-ambassador-app-btn"
@@ -186,6 +199,18 @@ export default function Navbar({
               >
                 Launch a Chapter (Community or School)
               </button>
+              <a
+                id="mobile-substack-btn"
+                href={SUBSTACK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full flex items-center justify-center gap-2 py-2.5 px-4 text-sm font-heading font-black text-slate-900 bg-[#FF66C4]/20 rounded-xl hover:bg-[#FF66C4] hover:text-white cursor-pointer uppercase tracking-wider border-2 border-slate-900 shadow-xs"
+              >
+                <SubstackIcon size={16} className="text-[#2C57C4]" />
+                <span>Read Our Substack (@market4med)</span>
+                <ExternalLink className="w-4 h-4" />
+              </a>
               <a
                 id="mobile-ambassador-btn"
                 href={GLOBAL_AMBASSADOR_FORM_URL}

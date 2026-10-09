@@ -31,7 +31,8 @@ import {
   GENERAL_MEMBERSHIP_FORM_URL,
   DEFAULT_CHAPTER_GOOGLE_FORM_URL,
   OFFICIAL_EMAIL,
-  INSTAGRAM_URL
+  INSTAGRAM_URL,
+  SUBSTACK_URL
 } from '../data/links';
 import { downloadDeployZip, downloadSourceZip } from '../utils/downloadHelper';
 
@@ -82,7 +83,8 @@ export default function BackupDuplicateModal({
         generalMembershipUrl: GENERAL_MEMBERSHIP_FORM_URL,
         chapterInterestUrl: DEFAULT_CHAPTER_GOOGLE_FORM_URL,
         email: OFFICIAL_EMAIL,
-        instagram: INSTAGRAM_URL
+        instagram: INSTAGRAM_URL,
+        substack: SUBSTACK_URL
       },
       currentLaunchState: {
         status: 'Accurate Founding Stage (No fake stats, no fake symposiums, no fake volunteer roles)',
@@ -202,7 +204,7 @@ export default function BackupDuplicateModal({
                     Current Launch Mode (100% Accurate)
                   </h4>
                   <p className="text-xs text-slate-600 leading-relaxed mb-3">
-                    Reflects the exact stage today: Global Ambassador & Chapter recruitment, General Membership, real introductory meetings. Zero fake numbers, zero fake symposiums, and no fake volunteer claims.
+                    Reflects the exact stage today: Global Ambassador & Chapter recruitment, General Membership, and Substack publication. Zero fake numbers, zero fake symposiums, and no fake volunteer claims.
                   </p>
                 </div>
                 <div className="pt-3 border-t border-slate-200 text-[11px] font-heading font-black text-[#2C57C4] uppercase flex items-center gap-1">
@@ -370,6 +372,16 @@ export default function BackupDuplicateModal({
                   <span className="text-[11px] text-slate-600 truncate block max-w-[200px]">{GENERAL_MEMBERSHIP_FORM_URL}</span>
                 </div>
                 <a href={GENERAL_MEMBERSHIP_FORM_URL} target="_blank" rel="noreferrer" className="text-[#FF66C4] hover:text-slate-900">
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
+
+              <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-between sm:col-span-2">
+                <div>
+                  <span className="font-heading font-black text-slate-900 block text-[11px] uppercase">Official Substack Publication:</span>
+                  <span className="text-[11px] text-slate-600 truncate block">{SUBSTACK_URL}</span>
+                </div>
+                <a href={SUBSTACK_URL} target="_blank" rel="noreferrer" className="text-[#FF66C4] hover:text-[#2C57C4]">
                   <ExternalLink className="w-4 h-4" />
                 </a>
               </div>

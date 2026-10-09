@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { Mail, ArrowRight, ShieldCheck, CheckCircle2, Instagram, Palette, ExternalLink, Sparkles, Globe } from 'lucide-react';
-import { Market4MedSecondaryLogo, TikTokIcon } from './BrandLogos';
+import { Market4MedSecondaryLogo, TikTokIcon, SubstackIcon } from './BrandLogos';
 import { PageTab } from '../types';
-import { GENERAL_MEMBERSHIP_FORM_URL, GLOBAL_AMBASSADOR_FORM_URL, OFFICIAL_EMAIL, INSTAGRAM_URL, TIKTOK_URL } from '../data/links';
+import { GENERAL_MEMBERSHIP_FORM_URL, GLOBAL_AMBASSADOR_FORM_URL, OFFICIAL_EMAIL, INSTAGRAM_URL, TIKTOK_URL, SUBSTACK_URL } from '../data/links';
 
 interface FooterProps {
   siteMode?: 'current' | 'vision';
+  activeTab?: PageTab;
   onSelectTab?: (tab: PageTab) => void;
   onOpenBrandKitModal?: () => void;
   onOpenDuplicateModal?: () => void;
@@ -14,6 +15,7 @@ interface FooterProps {
 
 export default function Footer({
   siteMode = 'current',
+  activeTab,
   onSelectTab,
   onOpenBrandKitModal,
   onOpenDuplicateModal: _onOpenDuplicateModal,
@@ -38,8 +40,8 @@ export default function Footer({
   return (
     <footer id="site-footer" className="bg-[#2C57C4] text-white pt-16 pb-12 border-t-4 border-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top Callout Bar: In Current Mode, direct Board & Chapter Action; in Vision Mode, Future Newsletter Draft */}
-        {siteMode === 'current' ? (
+        {/* Top Callout Bar: Context-aware to prevent repetitive banners */}
+        {siteMode === 'current' && activeTab !== 'opportunities' && activeTab !== 'chapters' ? (
           <div className="bg-[#3252AD] border-3 border-slate-900 rounded-2xl p-6 sm:p-10 mb-16 flex flex-col lg:flex-row items-center justify-between gap-8 m4m-editorial-shadow-pink">
             <div className="max-w-xl">
               <span className="text-xs uppercase tracking-widest text-[#FF66C4] font-heading font-black block mb-1">
@@ -144,7 +146,18 @@ export default function Footer({
             <p className="text-white/85 text-xs font-body leading-relaxed max-w-sm">
               The premier student-run organization bridging clinical medicine and business economics to advance healthcare literacy and investigate how psychology shapes trust in healthcare.
             </p>
-            <div className="flex flex-wrap items-center gap-3 pt-2">
+            <div className="flex flex-wrap items-center gap-2.5 pt-2">
+              <a
+                href={SUBSTACK_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/10 hover:bg-[#FF66C4] text-white text-xs font-heading font-bold transition-colors"
+                title="Official Substack @market4med"
+              >
+                <SubstackIcon size={14} className="text-[#FF66C4]" />
+                <span>Substack</span>
+              </a>
+
               <a
                 href={INSTAGRAM_URL}
                 target="_blank"
@@ -216,6 +229,18 @@ export default function Footer({
                 >
                   <span>General Membership Form</span>
                   <ExternalLink className="w-3 h-3" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href={SUBSTACK_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/90 hover:text-[#FF66C4] font-heading font-bold transition-colors inline-flex items-center gap-1.5"
+                >
+                  <SubstackIcon size={12} className="text-[#FF66C4]" />
+                  <span>Read Substack (@market4med)</span>
+                  <ExternalLink className="w-3 h-3 text-white/70" />
                 </a>
               </li>
               <li><button onClick={() => handleLinkClick('chapters')} className="hover:text-white transition-colors cursor-pointer text-left">Start a Chapter (Anywhere)</button></li>
