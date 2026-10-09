@@ -35,16 +35,7 @@ export default function Hero({
         }}
       />
 
-      {/* Floating Graphic Accents */}
-      <div className="absolute top-56 left-4 xl:left-12 hidden lg:flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-white border-2 border-slate-900 m4m-editorial-shadow-sm rotate-[-4deg] pointer-events-none select-none z-10">
-        <BrandStar color="#2C57C4" size={14} />
-        <span className="text-[11px] font-heading font-black text-[#2C57C4] uppercase tracking-wider">Medicine × Business</span>
-      </div>
 
-      <div className="absolute top-56 right-4 xl:right-12 hidden lg:flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-[#FF66C4] text-white border-2 border-slate-900 m4m-editorial-shadow-sm rotate-[4deg] pointer-events-none select-none z-10">
-        <Sparkles className="w-3.5 h-3.5 text-white" />
-        <span className="text-[11px] font-heading font-black uppercase tracking-wider">2026–2027 Cycle</span>
-      </div>
 
       <div className="absolute bottom-24 left-8 hidden xl:flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-white border-2 border-slate-900 m4m-editorial-shadow-sm rotate-[2deg] pointer-events-none select-none z-10">
         <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
@@ -105,12 +96,26 @@ export default function Hero({
 
         {/* Hero Visual Brand Presentation: The Official Primary Cloud Logo */}
         <div className="flex justify-center mb-8">
-          <div className="bg-[#2C57C4] p-5 sm:p-7 rounded-2xl border-3 border-slate-900 m4m-editorial-shadow-pink max-w-lg w-full flex items-center justify-center relative overflow-hidden">
-            <BrandStar color="#FF66C4" size={26} className="absolute top-3 left-4 animate-pulse" />
-            <BrandStar color="#FFFFFF" size={18} className="absolute bottom-3 right-4 opacity-75" />
+          <div className="relative max-w-lg w-full">
+            <div className="bg-[#2C57C4] p-5 sm:p-7 rounded-2xl border-3 border-slate-900 m4m-editorial-shadow-pink w-full flex items-center justify-center relative overflow-hidden">
+              <BrandStar color="#FF66C4" size={26} className="absolute top-3 left-4 animate-pulse" />
+              <BrandStar color="#FFFFFF" size={18} className="absolute bottom-3 right-4 opacity-75" />
 
-            <div className="w-full max-w-[380px]">
-              <Market4MedPrimaryLogo variant="blob" size="lg" className="w-full" />
+              <div className="w-full max-w-[380px]">
+                <Market4MedPrimaryLogo variant="blob" size="lg" className="w-full" />
+              </div>
+            </div>
+
+            {/* Medicine × Business Sticker - pinned to bottom-left of the brand card */}
+            <div className="absolute -bottom-3.5 -left-2 sm:-left-5 flex items-center gap-2 px-3 py-1.5 rounded-md bg-white border-2 border-slate-900 m4m-editorial-shadow-sm rotate-[-4deg] select-none z-20">
+              <BrandStar color="#2C57C4" size={14} />
+              <span className="text-[11px] font-heading font-black text-[#2C57C4] uppercase tracking-wider">Medicine × Business</span>
+            </div>
+
+            {/* 2026–2027 Cycle Sticker - pinned to top-right of the brand card */}
+            <div className="absolute -top-3.5 -right-2 sm:-right-5 flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#FF66C4] text-white border-2 border-slate-900 m4m-editorial-shadow-sm rotate-[4deg] select-none z-20">
+              <Sparkles className="w-3.5 h-3.5 text-white" />
+              <span className="text-[11px] font-heading font-black uppercase tracking-wider">2026–2027 Cycle</span>
             </div>
           </div>
         </div>
